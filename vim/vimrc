@@ -1,0 +1,93 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rking/ag.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'stephpy/vim-yaml'
+Plugin 'solarnz/thrift.vim'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'lervag/vimtex'
+Plugin 'tpope/vim-commentary'
+Plugin 'majutsushi/tagbar'
+call vundle#end()
+filetype plugin indent on
+
+syntax on
+set encoding=utf-8
+set termencoding=utf-8
+set incsearch
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set number
+set pastetoggle=<F9>
+set laststatus=2
+set scrolloff=5
+set hidden
+set nobackup
+set nowb
+set noswapfile
+set backspace=indent,eol,start
+set hls
+set autoread
+set completeopt=longest,menu
+
+colorscheme molokai
+
+"remove unwanted whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>d :bd<CR>
+nnoremap <silent> <F1> :set nu<CR>
+nnoremap <silent> <F2> :set nonu<CR>
+
+"ag.vim
+let g:ag_prg="/usr/local/bin/ag --vimgrep"
+let g:ag_working_path_mode="r"
+
+"YouCompleteMe
+let g:ycm_confirm_extra_conf=0
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_cache_omnifunc=0
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_server_python_interpreter='python'
+let g:ycm_complete_in_comments=1
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_complete_in_strings=1
+let g:ycm_collect_identifiers_from_comments_and_strings=0
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"ctrlp.vim
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_working_path_mode='ra'
+
+"vim-airline
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+
+"vimtex
+let g:vimtex_compiler_latexmk={'callback' : 0}
+let g:vimtex_disable_version_warning=1
+let g:tex_flavor='latex'
+
+"tagbar
+nmap <F8> :TagbarToggle<CR>
