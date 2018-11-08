@@ -86,10 +86,10 @@ let g:ctrlp_working_path_mode='ra'
 let g:airline_powerline_fonts=1
 "是否展示顶部栏
 let g:airline#extensions#tabline#enabled=1
-"顶部栏展示splits
-let g:airline#extensions#tabline#show_splits = 1
-"顶部栏不展示buffer
-let g:airline#extensions#tabline#show_buffers = 0
+"顶部栏是否展示splits
+"let g:airline#extensions#tabline#show_splits = 1
+"顶部栏是否展示buffer
+let g:airline#extensions#tabline#show_buffers = 1
 
 "vimtex
 let g:vimtex_compiler_latexmk={'callback' : 0}
