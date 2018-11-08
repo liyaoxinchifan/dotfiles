@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-commentary'
 Plugin 'majutsushi/tagbar'
+Plugin 'regedarek/ZoomWin'
 call vundle#end()
 filetype plugin indent on
 
