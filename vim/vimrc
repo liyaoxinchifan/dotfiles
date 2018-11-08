@@ -53,8 +53,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>d :bd<CR>
-nnoremap <silent> <F1> :set nu<CR>
-nnoremap <silent> <F2> :set nonu<CR>
+nnoremap <silent> <F2> :set invnumber<CR>
 
 "ag.vim
 let g:ag_prg="/usr/local/bin/ag --vimgrep"
