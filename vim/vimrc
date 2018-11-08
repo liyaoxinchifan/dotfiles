@@ -32,7 +32,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set number
+"set number
 set pastetoggle=<F9>
 set laststatus=2
 set scrolloff=5
@@ -71,6 +71,8 @@ let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_complete_in_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=0
+"跳转代码时垂直分割窗口
+let g:ycm_goto_buffer_command = 'vertical-split'
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -82,7 +84,12 @@ let g:ctrlp_working_path_mode='ra'
 
 "vim-airline
 let g:airline_powerline_fonts=1
+"是否展示顶部栏
 let g:airline#extensions#tabline#enabled=1
+"顶部栏展示splits
+let g:airline#extensions#tabline#show_splits = 1
+"顶部栏不展示buffer
+let g:airline#extensions#tabline#show_buffers = 0
 
 "vimtex
 let g:vimtex_compiler_latexmk={'callback' : 0}
